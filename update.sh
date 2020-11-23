@@ -2,7 +2,7 @@ echo -n "Please enter your Jenkins Container ID: "
 read id
 
 docker exec -u root $id wget --directory-prefix=/home/jenkins/ https://updates.jenkins.io/latest/jenkins.war
-docker exec -u root $id mv home/jenkins/jenkins.war /usr/share/jenkins
+docker exec -u root $id mv /home/jenkins/jenkins.war /usr/share/jenkins
 docker exec -u root $id chown jenkins:jenkins /usr/share/jenkins/jenkins.war
 
 read -p "New 'jenkins.war' was successfully deployed. Do you want to restart Jenkins now? (yes/no) " reply
